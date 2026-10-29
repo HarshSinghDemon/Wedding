@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "Wish": {
+      "title": "Wish",
+      "description": "A blessing or wish left by a guest for Kartikey & Rupshree",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Name of the guest leaving the wish"
+        },
+        "relation": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Relation to the couple"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000,
+          "description": "The blessing or wish message"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the wish was submitted"
+        }
+      },
+      "required": ["name", "message"]
+    },
+    "SongSuggestion": {
+      "title": "SongSuggestion",
+      "description": "A dance or celebration track suggested by guests for the Sangeet celebration",
+      "type": "object",
+      "properties": {
+        "songTitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 150,
+          "description": "Name of the song"
+        },
+        "artist": {
+          "type": "string",
+          "maxLength": 150,
+          "description": "Artist or movie name"
+        },
+        "suggestedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Name of the guest recommending the song"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the suggestion was submitted"
+        }
+      },
+      "required": ["songTitle", "suggestedBy"]
+    }
+  },
+  "firestore": {
+    "/wishes/{wishId}": {
+      "schema": "Wish",
+      "description": "Collection of guest wishes for the wedding"
+    },
+    "/song_suggestions/{songId}": {
+      "schema": "SongSuggestion",
+      "description": "Collection of Sangeet song suggestions from guests"
+    }
+  }
+}

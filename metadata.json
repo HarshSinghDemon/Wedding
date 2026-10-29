@@ -1,0 +1,6 @@
+{
+  "name": "The Royal Gateway - Wedding of Kartikey & Rupshree",
+  "description": "An opulent Royal Indian Wedding invitation experience featuring interactive gates, countdown, photo gallery, love story timeline, venues, and RSVP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
